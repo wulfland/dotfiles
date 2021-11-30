@@ -8,3 +8,34 @@
 	whitespace = space-before-tab,tab-in-indent,tabwith=4,cr-at-eol,trailing-whitespace
 [help]
 	autocorrect = 20
+[alias]
+	mfstart = "!f() { \
+		git switch -c users/$1/$2_$3 && \
+		git commit && \
+		git push --set-upstream origin users/$1/$2_$3 && \
+		gh pr create --fill --draft;  \
+	};f"
+	mfrelease = "!f() { \
+		if [[ -z \"$1\" ]]; then \
+			echo Please specify a name for the tag; \
+		else \
+			gh release create $1 --notes $2; \
+		fi; \
+	};f" 
+	mfhotfixinit = "!f() { \
+		git checkout $1 && \
+		git switch -c hotfix/$1 && \
+		git push --set-upstream origin hotfix/$1 && \
+		git switch main; \
+	};f"
+	mfhotfix = "!f() { \
+		head=$(git symbolic-ref HEAD --short); \
+		echo Cherry-pick $head onto release/$1 && \
+		git switch release/$1 && \
+		git switch -c hotfix/$1 && \
+		git push --set-upstream origin hotfix/$1 && \
+		git cherry-pick $head && \
+		git push && \
+		gh pr create --fill --base release/$1 && \
+		gh pr merge --auto --rebase --delete-branch; \
+	};f"
