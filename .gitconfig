@@ -39,3 +39,4 @@
 		gh pr create --fill --base release/$1 && \
 		gh pr merge --auto --rebase --delete-branch; \
 	};f"
+	lol = log --oneline --graph --decorate --all
