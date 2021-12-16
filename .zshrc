@@ -82,7 +82,12 @@ export ZSH="/Users/mike/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+  git
+  fzf-tab
+  zsh-completions
+  fzf
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -109,8 +114,8 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="code ~/.zshrc"
-alias ohmyzsh="code ~/.oh-my-zsh"
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
 alias cls="clear"
 alias please="sudo"
 
@@ -119,3 +124,5 @@ alias please="sudo"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
