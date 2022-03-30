@@ -3,6 +3,7 @@
 [user]
 	name = Michael Kaufmann
 	email = 5276337+wulfland@users.noreply.github.com
+	signingKey = D7CCF00C
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
 	whitespace = space-before-tab,tab-in-indent,tabwith=4,cr-at-eol,trailing-whitespace
@@ -19,7 +20,7 @@
 		if [[ -z \"$1\" ]]; then \
 			echo Please specify a name for the tag; \
 		else \
-			gh release create $1 --notes $2; \
+			gh release create $1 --generate-notes; \
 		fi; \
 	};f" 
 	mfhotfixinit = "!f() { \
@@ -40,3 +41,13 @@
 		gh pr merge --auto --rebase --delete-branch; \
 	};f"
 	lol = log --oneline --graph --decorate --all
+	last = log -1
+	s = switch -c
+[pull]
+	rebase = true
+[merge]
+	conflictStyle = diff3
+[commit]
+	gpgSign = true
+[tag]
+	gpgSign = true

@@ -2104,13 +2104,66 @@
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>guid</key>
+			<string>7D619C60-349C-44C8-AF93-9350C3E75714</string>
+			<key>title</key>
+			<string>Touch 6 files</string>
+			<key>value</key>
+			<string>for d in {1..6}; do touch "file${d}.md"; git add "file${d}.md"; git commit -m "adding file ${d}"; done</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>guid</key>
+			<string>99376B55-079E-4DF0-B343-26D6C79D9DBF</string>
+			<key>title</key>
+			<string>Fill 6 lines...</string>
+			<key>value</key>
+			<string>mkdir folder;
+for d in {1..6}; do echo  "Line ${d}" &gt;&gt; folder/file.txt; done;</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>guid</key>
+			<string>4E6C7B6F-6405-4290-A12B-EC1E6C908019</string>
+			<key>title</key>
+			<string>Create branch history</string>
+			<key>value</key>
+			<string>for d in {1..4}; do touch "file${d}.md"; git add "file${d}.md"; git commit -m "adding file ${d}"; done; 
+git switch -c experiment; 
+for d2 in {4..7}; do touch "file${d2}.md"; git add "file${d2}.md"; git commit -m "adding file ${d2}"; done; 
+git switch main; 
+for d3 in {8..12}; do touch "file${d3}.md"; git add "file${d3}.md"; git commit -m "adding file ${d3}"; done;</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>guid</key>
+			<string>C23D365E-F32E-416E-9779-7185C5AB058B</string>
+			<key>title</key>
+			<string>Create Merge Conflict</string>
+			<key>value</key>
+			<string>echo "Solving merge conflicts in git is easy" &gt; Merge.txt
+git add Merge.txt
+git commit -m "Base commit"
+git switch -c experiment
+echo "Solving merge conflicts is easy in git" &gt; Merge.txt
+git commit -am "Modify Merge.txt in experiment"
+git switch main
+echo "Solving merge conflicts in git is very easy" &gt; Merge.txt
+git commit -am "Modify Merge.txt in main"
+git switch experiment</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>ToolbeltTools</key>
 	<array>
 		<string>Snippets</string>
-		<string>Captured Output</string>
 		<string>Command History</string>
 	</array>
 	<key>VisualIndicatorForEsc</key>
@@ -4444,6 +4497,8 @@
 			</dict>
 		</array>
 	</dict>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

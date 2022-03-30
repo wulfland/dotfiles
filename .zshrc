@@ -87,6 +87,17 @@ plugins=(
   fzf-tab
   zsh-completions
   fzf
+  gpg-agent
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  history-substring-search
+  screen
+  systemd
+  web-search
+  k
+  extract
+  z
+  sudo
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -114,6 +125,9 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
+function ghpr() {
+    GH_FORCE_TTY=100% gh pr list | fzf --ansi  --preview 'GH_FORCE_TTY=100% gh pr view {1}' --preview-window down --header-lines 3 | awk '{print $1}' | xargs gh pr checkout
+}
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias cls="clear"
@@ -126,3 +140,5 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# added by github/training-manual class setup
+test -f "/Users/mike/.trainingmanualrc" && source "/Users/mike/.trainingmanualrc"
