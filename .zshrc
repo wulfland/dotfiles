@@ -87,6 +87,17 @@ plugins=(
   fzf-tab
   zsh-completions
   fzf
+  gpg-agent
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  history-substring-search
+  screen
+  systemd
+  web-search
+  k
+  extract
+  z
+  sudo
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -126,3 +137,5 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# added by github/training-manual class setup
+test -f "/Users/mike/.trainingmanualrc" && source "/Users/mike/.trainingmanualrc"

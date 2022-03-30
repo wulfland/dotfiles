@@ -2104,6 +2104,27 @@
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>guid</key>
+			<string>7D619C60-349C-44C8-AF93-9350C3E75714</string>
+			<key>title</key>
+			<string>Touch 6 files</string>
+			<key>value</key>
+			<string>for d in {1..6}; do touch "file${d}.md"; git add "file${d}.md"; git commit -m "adding file ${d}"; done</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>guid</key>
+			<string>99376B55-079E-4DF0-B343-26D6C79D9DBF</string>
+			<key>title</key>
+			<string>Fill 6 lines...</string>
+			<key>value</key>
+			<string>mkdir folder;
+for d in {1..6}; do echo  "Line ${d}" &gt;&gt; folder/file.txt; done;</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>SoundForEsc</key>
 	<false/>

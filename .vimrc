@@ -32,8 +32,8 @@ set updatetime=50
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 
-set colorcolumn=80
-highlight ColorColumn ctermbg=0 guibg=lightgrey
+set colorcolumn=+0
+highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
 
 call plug#begin('~/.vim/plugged')
 Plug 'preservim/nerdtree'
