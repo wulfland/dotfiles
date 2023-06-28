@@ -3,7 +3,9 @@
 [user]
 	name = Michael Kaufmann
 	email = 5276337+wulfland@users.noreply.github.com
-	signingKey = D7CCF00C
+;   signingKey = D7CCF00C
+    signingKey = 5B1637A3
+;   signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAoQblS2wZSZnRekANkUZaxN5jjc3Mk1zv7jqLEXajVI
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
 	whitespace = space-before-tab,tab-in-indent,tabwith=4,cr-at-eol,trailing-whitespace
@@ -51,3 +53,15 @@
 	gpgSign = true
 [tag]
 	gpgSign = true
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+[gpg]
+;  format = ssh
+[gpg "ssh"]
+;  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+;  allowedSignersFile = "/Users/mike/.config/git/allowed_signers"
+
+
