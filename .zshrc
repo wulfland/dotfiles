@@ -1,12 +1,12 @@
 
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
-function gpg_cache () {
-  gpg-connect-agent /bye &> /dev/null
-  eval $(op signin)
-  op item get "PGP Passphrase" --fields label=password | "$(gpgconf --list-dirs libexecdir)"/gpg-preset-passphrase --preset F66C7AA071140BBF0E40A63FE7716243427A128E
-}
-gpg_cache
+#function gpg_cache () {
+#  gpg-connect-agent /bye &> /dev/null
+#  eval $(op signin)
+#  op item get "PGP Passphrase" --fields label=password | "$(gpgconf --list-dirs libexecdir)"/gpg-preset-passphrase --preset F66C7AA071140BBF0E40A63FE7716243427A128E
+#}
+#gpg_cache
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
