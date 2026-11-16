@@ -21,7 +21,7 @@ source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/mike/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -148,7 +148,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # added by github/training-manual class setup
-test -f "/Users/mike/.trainingmanualrc" && source "/Users/mike/.trainingmanualrc"
-source /Users/mike/.config/op/plugins.sh
+test -f "$HOME/.trainingmanualrc" && source "$HOME/.trainingmanualrc"
 
-eval "$(github-copilot-cli alias -- "$0")"
+command -v github-copilot-cli >/dev/null && eval "$(github-copilot-cli alias -- "$0")"
